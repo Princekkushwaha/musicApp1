@@ -142,7 +142,7 @@ class searchPage extends StatelessWidget {
                   ),
                   const SizedBox(
                     height: 10,
-                  ),
+                  ), //ghiausgisudhisduhuhi
                   Expanded(
                     child: ListView.builder(
                       scrollDirection: Axis.vertical,
