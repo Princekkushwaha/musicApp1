@@ -152,7 +152,7 @@ class searchPage extends StatelessWidget {
                           padding: const EdgeInsets.all(8.0),
                           child: Container(
                               // width: 35,
-                              height: 80,
+                              height: 90,
                               // alignment: Alignment.bottomCenter,
                               decoration: BoxDecoration(
                                   boxShadow: const [
