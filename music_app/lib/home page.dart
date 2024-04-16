@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import 'package:music_app/appcolors.dart';
@@ -94,21 +95,21 @@ class HomePage extends StatelessWidget {
           ),
           Image.asset(
             'assets/images/cat 1.png',
-            height: 53,
-            width: 53,
+            height: 53.h,
+            width: 53.w,
           ),
           const SizedBox(
             width: 10,
           )
         ],
-        leadingWidth: 40,
+        leadingWidth: 40.w,
         elevation: 0,
         backgroundColor: const Color(0xff8D7DEF),
         leading: Padding(
           padding: const EdgeInsets.only(left: 19),
           child: SvgPicture.asset(
             'assets/images/Group 82.svg',
-            height: 10,
+            height: 10.h,
             color: const Color.fromARGB(255, 241, 238, 238),
           ),
         ),
@@ -131,41 +132,41 @@ class HomePage extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Padding(
-                  padding: EdgeInsets.only(left: 27),
+                Padding(
+                  padding: const EdgeInsets.only(left: 27),
                   child: Text(
                     "Hello Maciek 👋",
                     style: TextStyle(
-                      fontSize: 20,
-                      color: Color(0XffFFFFFF),
+                      fontSize: 20.sp,
+                      color: const Color(0XffFFFFFF),
                     ),
                   ),
                 ),
-                const Padding(
-                  padding: EdgeInsets.only(left: 27),
+                Padding(
+                  padding: const EdgeInsets.only(left: 27),
                   child: Text(
                     'What’s your mood today?',
                     style: TextStyle(
-                      fontSize: 13,
-                      color: Color(0XffFFFFFF),
-                    ),
-                  ),
-                ),
-                const SizedBox(
-                  height: 20,
-                ),
-                const Padding(
-                  padding: EdgeInsets.only(left: 27),
-                  child: Text(
-                    "Genres",
-                    style: TextStyle(
-                      fontSize: 24,
-                      color: Color(0XffFFFFFF),
+                      fontSize: 13.sp,
+                      color: const Color(0XffFFFFFF),
                     ),
                   ),
                 ),
                 SizedBox(
-                  height: 150,
+                  height: 20.h,
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 27),
+                  child: Text(
+                    "Genres",
+                    style: TextStyle(
+                      fontSize: 24.sp,
+                      color: const Color(0XffFFFFFF),
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  height: 150.h,
                   child: ListView.builder(
                     scrollDirection: Axis.horizontal,
                     itemCount: 5,
@@ -173,7 +174,7 @@ class HomePage extends StatelessWidget {
                       return Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Container(
-                            width: 150,
+                            width: 150.w,
                             decoration: BoxDecoration(
                                 boxShadow: const [
                                   BoxShadow(
@@ -187,15 +188,15 @@ class HomePage extends StatelessWidget {
                               children: [
                                 Text(
                                   music[index],
-                                  style: const TextStyle(
-                                    fontSize: 20,
+                                  style: TextStyle(
+                                    fontSize: 20.sp,
                                     fontWeight: FontWeight.w700,
-                                    color: Color(0XffFFFFFF),
+                                    color: const Color(0XffFFFFFF),
                                   ),
                                 ),
                                 Image.asset(
                                   pic[index],
-                                  height: 76,
+                                  height: 76.h,
                                 )
                               ],
                             )),
@@ -203,25 +204,25 @@ class HomePage extends StatelessWidget {
                     },
                   ),
                 ),
-                const SizedBox(
-                  height: 23,
+                SizedBox(
+                  height: 23.h,
                 ),
-                const Padding(
-                  padding: EdgeInsets.only(left: 23),
+                Padding(
+                  padding: const EdgeInsets.only(left: 23),
                   child: Text(
                     "You may like it",
                     style: TextStyle(
-                      fontSize: 24,
+                      fontSize: 24.sp,
                       fontWeight: FontWeight.w600,
-                      color: Color(0XffFFFFFF),
+                      color: const Color(0XffFFFFFF),
                     ),
                   ),
                 ),
-                const SizedBox(
-                  height: 20,
+                SizedBox(
+                  height: 20.h,
                 ),
                 SizedBox(
-                  height: 150,
+                  height: 150.h,
                   child: ListView.builder(
                     scrollDirection: Axis.horizontal,
                     itemCount: 5,
@@ -229,7 +230,7 @@ class HomePage extends StatelessWidget {
                       return Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Container(
-                            width: 150,
+                            width: 150.w,
                             decoration: BoxDecoration(
                                 boxShadow: const [
                                   BoxShadow(
@@ -243,15 +244,15 @@ class HomePage extends StatelessWidget {
                               children: [
                                 Text(
                                   music[index + 5],
-                                  style: const TextStyle(
-                                    fontSize: 20,
+                                  style: TextStyle(
+                                    fontSize: 20.sp,
                                     fontWeight: FontWeight.w700,
-                                    color: Color(0XffFFFFFF),
+                                    color: const Color(0XffFFFFFF),
                                   ),
                                 ),
                                 Image.asset(
                                   pic[index + 5],
-                                  height: 76,
+                                  height: 76.h,
                                 )
                               ],
                             )),
@@ -259,25 +260,25 @@ class HomePage extends StatelessWidget {
                     },
                   ),
                 ),
-                const SizedBox(
-                  height: 15,
+                SizedBox(
+                  height: 15.h,
                 ),
-                const Padding(
-                  padding: EdgeInsets.only(left: 19),
+                Padding(
+                  padding: const EdgeInsets.only(left: 19),
                   child: Text(
                     "Music premieres",
                     style: TextStyle(
                       fontWeight: FontWeight.w600,
-                      fontSize: 24,
-                      color: Color(0XffFFFFFF),
+                      fontSize: 24.sp,
+                      color: const Color(0XffFFFFFF),
                     ),
                   ),
                 ),
-                const SizedBox(
-                  height: 20,
+                SizedBox(
+                  height: 20.h,
                 ),
                 SizedBox(
-                  height: 140,
+                  height: 140.h,
                   child: ListView.builder(
                     scrollDirection: Axis.horizontal,
                     itemCount: 2,
@@ -285,8 +286,6 @@ class HomePage extends StatelessWidget {
                       return Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Container(
-                            // width: 35
-                            // alignment: Alignment.bottomCenter,
                             decoration: BoxDecoration(
                                 boxShadow: const [
                                   BoxShadow(
@@ -314,10 +313,10 @@ class HomePage extends StatelessWidget {
                                       children: [
                                         Image.asset(
                                           pic[index + 10],
-                                          height: 90,
+                                          height: 90.h,
                                         ),
-                                        const SizedBox(
-                                          width: 10,
+                                        SizedBox(
+                                          width: 10.w,
                                         ),
                                         Column(
                                           crossAxisAlignment:
@@ -330,10 +329,10 @@ class HomePage extends StatelessWidget {
                                               children: [
                                                 Image.asset(
                                                   image[index],
-                                                  height: 22,
+                                                  height: 22.h,
                                                 ),
-                                                const SizedBox(
-                                                  width: 10,
+                                                SizedBox(
+                                                  width: 10.w,
                                                 ),
                                                 Column(
                                                     crossAxisAlignment:
@@ -343,19 +342,19 @@ class HomePage extends StatelessWidget {
                                                       coustoText(
                                                           text: singer[index]),
                                                     ]),
-                                                const Row(
+                                                Row(
                                                   crossAxisAlignment:
                                                       CrossAxisAlignment.start,
                                                   children: [
                                                     SizedBox(
-                                                      width: 10,
+                                                      width: 10.w,
                                                     ),
                                                   ],
                                                 )
                                               ],
                                             ),
-                                            const SizedBox(
-                                              height: 22,
+                                            SizedBox(
+                                              height: 22.h,
                                             ),
                                             coustoText(text: music[index + 12])
                                           ],
@@ -376,8 +375,8 @@ class HomePage extends StatelessWidget {
                     },
                   ),
                 ),
-                const SizedBox(
-                  height: 90,
+                SizedBox(
+                  height: 90.h,
                 ),
 
                 // Row(

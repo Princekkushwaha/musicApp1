@@ -2,6 +2,7 @@
 
 import 'package:assets_audio_player/assets_audio_player.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:music_app/home%20page.dart';
 import 'package:music_app/next%20music.dart';
 import 'package:music_app/second%20page.dart';
@@ -16,7 +17,8 @@ class nextmusic extends StatefulWidget {
 
 class _secondpageState extends State<nextmusic> {
   double progress = 0;
-
+  bool isfavourite = true;
+  ScrollController scrollController = ScrollController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,6 +35,8 @@ class _secondpageState extends State<nextmusic> {
         end: Alignment.bottomCenter,
       )),
       child: SingleChildScrollView(
+        controller: scrollController,
+        physics: const NeverScrollableScrollPhysics(),
         child: SafeArea(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -53,19 +57,19 @@ class _secondpageState extends State<nextmusic> {
                         Icons.arrow_back_ios_new_outlined,
                         color: Colors.white,
                       )),
-                  const Column(
+                  Column(
                     children: [
                       Text(
                         'Playing From Playlist',
                         style: TextStyle(
-                            fontSize: 18,
+                            fontSize: 18.sp,
                             fontWeight: FontWeight.w300,
                             color: Colors.white),
                       ),
                       Text(
                         'Euphoria Soundtrack',
                         style: TextStyle(
-                            fontSize: 18,
+                            fontSize: 18.sp,
                             fontWeight: FontWeight.w400,
                             color: Colors.white),
                       ),
@@ -77,41 +81,49 @@ class _secondpageState extends State<nextmusic> {
                   )
                 ],
               ),
-              const SizedBox(
-                height: 26,
+              SizedBox(
+                height: 7.h,
               ),
               Image.asset(
                 'assets/images/download 2(2).png',
+                height: 330,
               ),
-              const SizedBox(
-                height: 10,
+              SizedBox(
+                height: 2.h,
               ),
               Padding(
                 padding: const EdgeInsets.only(right: 20, left: 20),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Text(
+                    Text(
                       'Formula',
                       style: TextStyle(
-                        fontSize: 22,
-                        color: Color(0XffFFFFFF),
+                        fontSize: 22.sp,
+                        color: const Color(0XffFFFFFF),
                       ),
                     ),
-                    const Text(
+                    Text(
                       'Labirinth',
                       style: TextStyle(
                           fontWeight: FontWeight.w400,
-                          fontSize: 18,
-                          color: Color(0xffffffff)),
+                          fontSize: 18.sp,
+                          color: const Color(0xffffffff)),
                     ),
-                    const Row(
+                    Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
-                        Icon(
-                          Icons.favorite_outline,
-                          color: Color(0xffffffff),
-                        ),
+                        IconButton(
+                          onPressed: () {
+                            setState(() {
+                              isfavourite = !isfavourite;
+                            });
+                          },
+                          icon: Icon(Icons.favorite,
+                              color: isfavourite == true
+                                  ? const Color(0xffffffff)
+                                  : Colors.red),
+                        )
                       ],
                     ),
                     Slider(
@@ -151,8 +163,8 @@ class _secondpageState extends State<nextmusic> {
                   ],
                 ),
               ),
-              const SizedBox(
-                height: 5,
+              SizedBox(
+                height: 3.h,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -162,28 +174,28 @@ class _secondpageState extends State<nextmusic> {
                     color: Color(0Xff5069B1),
                     size: 30,
                   ),
-                  const SizedBox(
-                    width: 24,
+                  SizedBox(
+                    width: 24.w,
                   ),
                   const Icon(
                     Icons.skip_previous_rounded,
                     color: Color(0XffFFFFFF),
                     size: 39,
                   ),
-                  const SizedBox(
-                    width: 25,
+                  SizedBox(
+                    width: 25.w,
                   ),
-                  const CircleAvatar(
-                    maxRadius: 30,
-                    backgroundColor: Color(0Xff5069B1),
-                    child: Icon(
+                  CircleAvatar(
+                    maxRadius: 30.sp,
+                    backgroundColor: const Color(0Xff5069B1),
+                    child: const Icon(
                       Icons.play_arrow_sharp,
                       color: Color(0XffFFFFFF),
                       size: 45,
                     ),
                   ),
-                  const SizedBox(
-                    width: 25,
+                  SizedBox(
+                    width: 25.w,
                   ),
                   InkWell(
                       onTap: () {
@@ -196,8 +208,8 @@ class _secondpageState extends State<nextmusic> {
                         color: Color(0XffFFFFFF),
                         size: 40,
                       )),
-                  const SizedBox(
-                    width: 25,
+                  SizedBox(
+                    width: 25.w,
                   ),
                   const Icon(
                     Icons.dark_mode,
@@ -206,62 +218,90 @@ class _secondpageState extends State<nextmusic> {
                   ),
                 ],
               ),
-              const SizedBox(
-                height: 20,
+              SizedBox(
+                height: 4.h,
               ),
-              const Padding(
-                padding: EdgeInsets.only(left: 22),
+              Padding(
+                padding: const EdgeInsets.only(left: 22),
                 child: Row(
                   children: [
-                    Icon(
+                    const Icon(
                       Icons.computer_outlined,
                       color: Color(0Xff5069B1),
                     ),
                     SizedBox(
-                      width: 6,
+                      width: 6.w,
                     ),
                     Text(
                       'This Phone',
                       style: TextStyle(
-                        fontSize: 15,
+                        fontSize: 15.sp,
                         fontWeight: FontWeight.w400,
-                        color: Color(0Xff5069B1),
+                        color: const Color(0Xff5069B1),
                       ),
                     ),
                     SizedBox(
-                      width: 159,
+                      width: 159.w,
                     ),
-                    Icon(
+                    const Icon(
                       Icons.share_outlined,
                       color: Color(0XffFFFFFF),
                     ),
                     SizedBox(
-                      width: 2,
+                      width: 2.w,
                     ),
-                    Column(
+                    const Column(
                       children: [
                         Icon(
                           Icons.view_list_sharp,
                           color: Color(0XffFFFFFF),
                         ),
                       ],
-                    )
+                    ),
                   ],
                 ),
               ),
-              const SizedBox(
-                height: 100,
+              IconButton(
+                onPressed: () {
+                  if (scrollController.position.pixels == 0) {
+                    scrollController.animateTo(
+                      scrollController.position.maxScrollExtent,
+                      duration: const Duration(milliseconds: 300),
+                      curve: Curves.easeIn,
+                    );
+                  } else {
+                    scrollController.animateTo(
+                      0,
+                      duration: const Duration(milliseconds: 300),
+                      curve: Curves.easeIn,
+                    );
+                  }
+                },
+                icon: const Icon(
+                  (Icons.keyboard_arrow_up_rounded),
+                  color: Color(0XffFFFFFF),
+                  size: 25,
+                ),
+              ),
+              const Text(
+                "Lyrics",
+                style: TextStyle(
+                  color: Color(0XffFFFFFF),
+                ),
               ),
               SizedBox(
-                height: 250,
-                width: 360,
+                height: 40.h,
+              ),
+              SizedBox(
+                height: 250.h,
+                width: 360.w,
                 child: DecoratedBox(
                   decoration: BoxDecoration(
                     color: const Color(0Xff5069B1),
                     borderRadius: BorderRadius.circular(30),
                   ),
-                  child: const Padding(
-                    padding: EdgeInsets.only(left: 19, top: 16),
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 19, top: 16),
                     child: Row(
                       children: [
                         Column(
@@ -270,29 +310,29 @@ class _secondpageState extends State<nextmusic> {
                             Text(
                               'Lyrics',
                               style: TextStyle(
-                                  color: Color(0XffFFFFFF),
+                                  color: const Color(0XffFFFFFF),
                                   fontWeight: FontWeight.w400,
-                                  fontSize: 14),
+                                  fontSize: 14.sp),
                             ),
                             SizedBox(
-                              height: 12,
+                              height: 12.h,
                             ),
                             Text(
                               'Screws loose, tell’em \nScrews loose, tell’em',
                               style: TextStyle(
-                                  color: Color(0XffFFFFFF),
+                                  color: const Color(0XffFFFFFF),
                                   fontWeight: FontWeight.w600,
-                                  fontSize: 22),
+                                  fontSize: 22.sp),
                             ),
                             SizedBox(
-                              height: 10,
+                              height: 1.h,
                             ),
                             Text(
                               "I’m livin’ for the thrill,\nformula, tell’em",
                               style: TextStyle(
                                   fontWeight: FontWeight.w600,
-                                  color: Color(0Xff454545),
-                                  fontSize: 22),
+                                  color: const Color(0Xff454545),
+                                  fontSize: 22.sp),
                             ),
                           ],
                         ),

@@ -1,9 +1,24 @@
 // ignore: file_names
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:music_app/second%20page.dart';
 
-class loginpage extends StatelessWidget {
+class loginpage extends StatefulWidget {
   const loginpage({super.key});
+
+  @override
+  State<loginpage> createState() => _loginpageState();
+}
+
+class _loginpageState extends State<loginpage> {
+  @override
+  void initState() {
+    super.initState();
+    log('Device height = ${Get.height} and Device width = ${Get.width}');
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -28,38 +43,38 @@ class loginpage extends StatelessWidget {
                           color: Color(0XffFFFFFF),
                         ),
                       ),
-                      const SizedBox(
-                        height: 10,
+                      SizedBox(
+                        height: 10.h,
                       ),
-                      const Text(
+                      Text(
                         'Listen to some',
                         style: TextStyle(
-                          color: Color(0XffFFFFFF),
-                          fontSize: 32,
+                          color: const Color(0XffFFFFFF),
+                          fontSize: 32.sp,
                         ),
                       ),
-                      const Text(
+                      Text(
                         'Drillin',
                         style: TextStyle(
-                          color: Color(0XffFFFFFF),
-                          fontSize: 32,
+                          color: const Color(0XffFFFFFF),
+                          fontSize: 32.sp,
                         ),
                       ),
-                      const Text(
+                      Text(
                         'Beats',
                         style: TextStyle(
-                          color: Color(0XffFFFFFF),
-                          fontSize: 32,
+                          color: const Color(0XffFFFFFF),
+                          fontSize: 32.sp,
                         ),
                       ),
-                      const SizedBox(
-                        height: 162,
+                      SizedBox(
+                        height: 162.h,
                       ),
                       Padding(
                         padding: const EdgeInsets.only(right: 20),
                         child: Container(
-                          width: 327,
-                          height: 55,
+                          width: 327.w,
+                          height: 55.h,
                           padding: const EdgeInsets.all(8.0),
                           decoration: BoxDecoration(
                               color: const Color.fromARGB(255, 119, 118, 118),
@@ -75,14 +90,14 @@ class loginpage extends StatelessWidget {
                           ),
                         ),
                       ),
-                      const SizedBox(
-                        height: 16,
+                      SizedBox(
+                        height: 16.h,
                       ),
                       Padding(
                         padding: const EdgeInsets.only(right: 20),
                         child: Container(
-                          width: 327,
-                          height: 55,
+                          width: 327.w,
+                          height: 55.h,
                           padding: const EdgeInsets.all(8.0),
                           decoration: BoxDecoration(
                               color: const Color.fromARGB(255, 119, 118, 118),
@@ -98,8 +113,8 @@ class loginpage extends StatelessWidget {
                           ),
                         ),
                       ),
-                      const SizedBox(
-                        height: 8,
+                      SizedBox(
+                        height: 8.h,
                       ),
                       const Row(
                         mainAxisAlignment: MainAxisAlignment.end,
@@ -114,8 +129,8 @@ class loginpage extends StatelessWidget {
                           )
                         ],
                       ),
-                      const SizedBox(
-                        height: 30,
+                      SizedBox(
+                        height: 30.h,
                       ),
                       Padding(
                         padding: const EdgeInsets.only(right: 20),
@@ -123,19 +138,19 @@ class loginpage extends StatelessWidget {
                           onTap: () {
                             Navigator.of(context).push(
                               MaterialPageRoute(
-                                builder: (context) =>  secondpage(),
+                                builder: (context) => const secondpage(),
                               ),
                             );
                           },
                           child: Container(
-                              width: 327,
-                              height: 55,
+                              width: 327.w,
+                              height: 55.h,
                               padding: const EdgeInsets.all(8.0),
                               decoration: BoxDecoration(
                                   color: const Color(0Xff3451FF),
                                   borderRadius: BorderRadius.circular(16)),
-                              child: const Padding(
-                                  padding: EdgeInsets.only(
+                              child: Padding(
+                                  padding: const EdgeInsets.only(
                                     left: 130,
                                     top: 8,
                                   ),
@@ -143,31 +158,31 @@ class loginpage extends StatelessWidget {
                                     'Sign In ',
                                     style: TextStyle(
                                       fontWeight: FontWeight.bold,
-                                      color: Color(0XffC9CCC9),
-                                      fontSize: 16,
+                                      color: const Color(0XffC9CCC9),
+                                      fontSize: 16.sp,
                                     ),
                                   ))),
                         ),
                       ),
-                      const SizedBox(
-                        height: 14,
+                      SizedBox(
+                        height: 14.h,
                       ),
                       Padding(
                         padding: const EdgeInsets.only(right: 20),
                         child: Container(
-                          width: 327,
-                          height: 55,
+                          width: 327.w,
+                          height: 55.h,
                           padding: const EdgeInsets.all(8.0),
                           decoration: BoxDecoration(
                               color: const Color.fromARGB(255, 240, 240, 243),
                               borderRadius: BorderRadius.circular(16)),
-                          child: const Padding(
-                              padding: EdgeInsets.only(left: 90, top: 8),
+                          child: Padding(
+                              padding: const EdgeInsets.only(left: 90, top: 8),
                               child: Text(
                                 'Create New Account',
                                 style: TextStyle(
-                                  color: Color(0Xff000000),
-                                  fontSize: 16,
+                                  color: const Color(0Xff000000),
+                                  fontSize: 16.sp,
                                 ),
                               )),
                         ),

@@ -22,5 +22,12 @@ class Assets {
   static const String pop4 = "assets/images/image 3 (2).png";
   static const String pop5 = "assets/images/image 4 (3).png";
 
-  
+  // songlist
+
+  static const String music1 = 'assets/images/image 9.png';
+  static const String music2 = 'assets/images/dog.png';
+  static const String music3 = 'assets/images/image 7.png';
+  static const String music4 = 'assets/images/image 10.png';
+  static const String music5 = 'assets/images/image 13 (2).png';
+  static const String music6 = 'assets/images/image 13 (3).png';
 }

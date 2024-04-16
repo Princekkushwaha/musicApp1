@@ -19,7 +19,7 @@ int currentPage = 0;
 List<Widget> musicPage = <Widget>[
   HomePage(),
   searchPage(),
-  const songPage(),
+  songPage(),
 ];
 
 class _MypageState extends State<Mypage> {

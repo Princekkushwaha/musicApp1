@@ -1,5 +1,6 @@
 import 'package:assets_audio_player/assets_audio_player.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:music_app/login%20page.dart';
 import 'package:music_app/next%20music.dart';
 
@@ -14,12 +15,12 @@ final assetsAudioPlayer = AssetsAudioPlayer();
 
 class _secondpageState extends State<secondpage> {
   double progress = 0;
+  ScrollController scrollController = ScrollController();
 
   bool play = true;
-   
+
   @override
   void initState() {
-    // TODO: implement initState
     assetsAudioPlayer.open(Audio("assets/audio/Albela-Tangewala.mp3"),
         autoStart: false);
     super.initState();
@@ -41,6 +42,8 @@ class _secondpageState extends State<secondpage> {
         end: Alignment.bottomCenter,
       )),
       child: SingleChildScrollView(
+        controller: scrollController,
+        physics: const NeverScrollableScrollPhysics(),
         child: SafeArea(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -61,19 +64,19 @@ class _secondpageState extends State<secondpage> {
                         Icons.arrow_back_ios_new_outlined,
                         color: Colors.white,
                       )),
-                  const Column(
+                  Column(
                     children: [
                       Text(
                         'Playing From Playlist',
                         style: TextStyle(
-                            fontSize: 18,
+                            fontSize: 18.sp,
                             fontWeight: FontWeight.w300,
                             color: Colors.white),
                       ),
                       Text(
                         'Discover Weekly',
                         style: TextStyle(
-                            fontSize: 18,
+                            fontSize: 18.sp,
                             fontWeight: FontWeight.w400,
                             color: Colors.white),
                       ),
@@ -85,30 +88,32 @@ class _secondpageState extends State<secondpage> {
                   )
                 ],
               ),
-              const SizedBox(
-                height: 26,
+              SizedBox(
+                height: 22.h,
               ),
               Image.asset(
                 'assets/images/download 1.png',
+                height: 330,
               ),
-              const SizedBox(
-                height: 10,
+              SizedBox(
+                height: 6.h,
               ),
               Padding(
                 padding: const EdgeInsets.only(right: 20, left: 20),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Text(
+                    Text(
                       'Watercolor Eyes - From Euphoria',
                       style: TextStyle(
-                        fontSize: 19,
-                        color: Color(0XffFFFFFF),
+                        fontSize: 19.sp,
+                        color: const Color(0XffFFFFFF),
                       ),
                     ),
-                    const Text(
+                    Text(
                       'Lana Del Rey',
-                      style: TextStyle(fontSize: 15, color: Color(0xffffffff)),
+                      style: TextStyle(
+                          fontSize: 15.sp, color: const Color(0xffffffff)),
                     ),
                     const Row(
                       mainAxisAlignment: MainAxisAlignment.end,
@@ -156,8 +161,8 @@ class _secondpageState extends State<secondpage> {
                   ],
                 ),
               ),
-              const SizedBox(
-                height: 5,
+              SizedBox(
+                height: 3.h,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -167,19 +172,19 @@ class _secondpageState extends State<secondpage> {
                     color: Color(0XffFFFFFF),
                     size: 30,
                   ),
-                  const SizedBox(
-                    width: 24,
+                  SizedBox(
+                    width: 24.w,
                   ),
                   const Icon(
                     Icons.skip_previous_rounded,
                     color: Color(0XffFFFFFF),
                     size: 39,
                   ),
-                  const SizedBox(
-                    width: 25,
+                  SizedBox(
+                    width: 25.w,
                   ),
                   CircleAvatar(
-                      maxRadius: 30,
+                      maxRadius: 30.sp,
                       backgroundColor: const Color(0XffBf6336),
                       child: IconButton(
                           splashColor: const Color(0XffBf6336),
@@ -201,8 +206,8 @@ class _secondpageState extends State<secondpage> {
                             play ? Icons.pause : Icons.play_arrow,
                             color: const Color(0XffFFFFFF),
                           ))),
-                  const SizedBox(
-                    width: 25,
+                  SizedBox(
+                    width: 25.w,
                   ),
                   InkWell(
                       onTap: () {
@@ -217,8 +222,8 @@ class _secondpageState extends State<secondpage> {
                         color: Color(0XffFFFFFF),
                         size: 40,
                       )),
-                  const SizedBox(
-                    width: 25,
+                  SizedBox(
+                    width: 25.w,
                   ),
                   const Icon(
                     Icons.dark_mode,
@@ -227,39 +232,39 @@ class _secondpageState extends State<secondpage> {
                   ),
                 ],
               ),
-              const SizedBox(
-                height: 20,
+              SizedBox(
+                height: 8.h,
               ),
-              const Padding(
-                padding: EdgeInsets.only(left: 22),
+              Padding(
+                padding: const EdgeInsets.only(left: 22),
                 child: Row(
                   children: [
-                    Icon(
+                    const Icon(
                       Icons.computer_outlined,
                       color: Color(0XffBf6336),
                     ),
                     SizedBox(
-                      width: 6,
+                      width: 6.w,
                     ),
                     Text(
                       'This Phone',
                       style: TextStyle(
-                        fontSize: 15,
+                        fontSize: 15.sp,
                         fontWeight: FontWeight.w400,
-                        color: Color(0XffBf6336),
+                        color: const Color(0XffBf6336),
                       ),
                     ),
                     SizedBox(
-                      width: 159,
+                      width: 159.w,
                     ),
-                    Icon(
+                    const Icon(
                       Icons.share_outlined,
                       color: Color(0XffFFFFFF),
                     ),
                     SizedBox(
-                      width: 2,
+                      width: 2.w,
                     ),
-                    Column(
+                    const Column(
                       children: [
                         Icon(
                           Icons.view_list_sharp,
@@ -270,48 +275,76 @@ class _secondpageState extends State<secondpage> {
                   ],
                 ),
               ),
-              const SizedBox(
-                height: 100,
+              IconButton(
+                onPressed: () {
+                  if (scrollController.position.pixels == 0) {
+                    scrollController.animateTo(
+                      scrollController.position.maxScrollExtent,
+                      duration: const Duration(milliseconds: 300),
+                      curve: Curves.easeIn,
+                    );
+                  } else {
+                    scrollController.animateTo(
+                      0,
+                      duration: const Duration(milliseconds: 300),
+                      curve: Curves.easeIn,
+                    );
+                  }
+                },
+                icon: const Icon(
+                  (Icons.keyboard_arrow_up_rounded),
+                  color: Color(0XffFFFFFF),
+                  size: 25,
+                ),
+              ),
+              const Text(
+                "Lyrics",
+                style: TextStyle(
+                  color: Color(0XffFFFFFF),
+                ),
               ),
               SizedBox(
-                height: 250,
-                width: 360,
+                height: 40.h,
+              ),
+              SizedBox(
+                height: 250.h,
+                width: 360.w,
                 child: DecoratedBox(
                   decoration: BoxDecoration(
                     color: const Color(0XffBf6336),
                     borderRadius: BorderRadius.circular(30),
                   ),
-                  child: const Padding(
-                    padding: EdgeInsets.only(left: 19, top: 16),
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 19, top: 16),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
                           'Lyrics',
                           style: TextStyle(
-                              color: Color(0XffFFFFFF),
+                              color: const Color(0XffFFFFFF),
                               fontWeight: FontWeight.w400,
-                              fontSize: 14),
+                              fontSize: 14.sp),
                         ),
                         SizedBox(
-                          height: 12,
+                          height: 12.h,
                         ),
                         Text(
                           'Young love don’t always last \nforever',
                           style: TextStyle(
-                              color: Color(0XffFFFFFF),
+                              color: const Color(0XffFFFFFF),
                               fontWeight: FontWeight.w600,
-                              fontSize: 22),
+                              fontSize: 22.sp),
                         ),
                         SizedBox(
-                          height: 1,
+                          height: 1.h,
                         ),
                         Text(
                           "Wild horses can’t keep us \ntogether \nSo what if you taste just like \nheaven?",
                           style: TextStyle(
                               fontWeight: FontWeight.w500,
-                              color: Color(0Xff454545),
-                              fontSize: 22),
+                              color: const Color(0Xff454545),
+                              fontSize: 22.sp),
                         ),
                       ],
                     ),

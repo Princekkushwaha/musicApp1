@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:music_app/appcolors.dart';
 import 'package:music_app/assets.dart';
@@ -44,21 +45,21 @@ class searchPage extends StatelessWidget {
             ),
             Image.asset(
               'assets/images/cat 1.png',
-              height: 53,
-              width: 53,
+              height: 53.h,
+              width: 53.w,
             ),
-            const SizedBox(
-              width: 10,
+            SizedBox(
+              width: 10.w,
             )
           ],
-          leadingWidth: 40,
+          leadingWidth: 40.w,
           elevation: 0,
           backgroundColor: const Color(0xff292A32),
           leading: Padding(
             padding: const EdgeInsets.only(left: 19),
             child: SvgPicture.asset(
               'assets/images/Group 82.svg',
-              height: 10,
+              height: 10.h,
               color: const Color.fromARGB(255, 241, 238, 238),
             ),
           ),
@@ -81,23 +82,23 @@ class searchPage extends StatelessWidget {
               ),
             ),
             child: SingleChildScrollView(
-              physics: const NeverScrollableScrollPhysics(),
+              // physics: const NeverScrollableScrollPhysics(),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Padding(
-                    padding: EdgeInsets.only(left: 27),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 27),
                     child: Text(
                       'Find the best music for\nyour playlist',
                       style: TextStyle(
                         fontWeight: FontWeight.w500,
-                        fontSize: 20,
-                        color: Color(0XffFFFFFF),
+                        fontSize: 20.sp,
+                        color: const Color(0XffFFFFFF),
                       ),
                     ),
                   ),
-                  const SizedBox(
-                    height: 10,
+                  SizedBox(
+                    height: 10.h,
                   ),
                   Column(
                     children: [
@@ -119,7 +120,7 @@ class searchPage extends StatelessWidget {
                             ),
                             // prefixIcon: Icon(Icons.search),
                             hintStyle: TextStyle(
-                              fontSize: 17,
+                              fontSize: 17.sp,
                               color: const Color(0XffFFFFFF).withOpacity(0.4),
                             ),
                           ),
@@ -127,33 +128,34 @@ class searchPage extends StatelessWidget {
                       ),
                     ],
                   ),
-                  const SizedBox(
-                    height: 10,
+                  SizedBox(
+                    height: 10.h,
                   ),
-                  const Padding(
-                    padding: EdgeInsets.only(left: 18),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 18),
                     child: Text(
                       "Recent searches",
                       style: TextStyle(
-                          fontSize: 20,
+                          fontSize: 20.sp,
                           fontWeight: FontWeight.w300,
-                          color: Color(0XffFFFFFF)),
+                          color: const Color(0XffFFFFFF)),
                     ),
                   ),
-                  const SizedBox(
-                    height: 10,
-                  ), //ghiausgisudhisduhuhi
-                  Expanded(
+                  SizedBox(
+                    height: 10.h,
+                  ),
+                  SizedBox(
+                    height: 600.h,
                     child: ListView.builder(
+                      physics: const NeverScrollableScrollPhysics(),
                       scrollDirection: Axis.vertical,
                       itemCount: 5,
                       itemBuilder: (context, index) {
                         return Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Container(
-                              // width: 35,
-                              height: 80,
-                              // alignment: Alignment.bottomCenter,
+                              height: 80.h,
+                              padding: const EdgeInsets.all(10),
                               decoration: BoxDecoration(
                                   boxShadow: const [
                                     BoxShadow(
@@ -163,76 +165,50 @@ class searchPage extends StatelessWidget {
                                   ],
                                   borderRadius: BorderRadius.circular(20),
                                   color: Colors.grey),
-                              child: Padding(
-                                  padding: const EdgeInsets.only(
-                                      left: 10, bottom: 6),
-                                  child: Padding(
-                                    padding: const EdgeInsets.only(
-                                      top: 9,
-                                      right: 20,
-                                    ),
-                                    child: Row(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.center,
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceBetween,
-                                        children: [
-                                          Image.asset(
-                                            pic[index],
-                                            height: 90,
-                                          ),
-                                          const SizedBox(
-                                            width: 10,
-                                          ),
-                                          Column(
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.center,
-                                            children: [
-                                              coustoText(text: music[index]),
-                                              Row(
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.center,
-                                                children: [
-                                                  const SizedBox(
-                                                    width: 10,
-                                                  ),
-                                                  Column(
-                                                      crossAxisAlignment:
-                                                          CrossAxisAlignment
-                                                              .start,
-                                                      children: [
-                                                        coustoText(
-                                                            text:
-                                                                singer[index]),
-                                                      ]),
-                                                  const Row(
-                                                    crossAxisAlignment:
-                                                        CrossAxisAlignment
-                                                            .start,
-                                                    children: [
-                                                      SizedBox(
-                                                        width: 10,
-                                                      ),
-                                                    ],
-                                                  )
-                                                ],
-                                              ),
-                                              const SizedBox(
-                                                height: 22,
-                                              ),
-                                            ],
-                                          ),
-                                          Padding(
-                                            padding: const EdgeInsets.only(
-                                                top: 7, left: 30),
-                                            child: Icon(
-                                              Icons.clear,
-                                              color: const Color(0XffFFFFFF)
-                                                  .withOpacity(0.4),
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Row(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.center,
+                                      // mainAxisAlignment:
+                                      //     MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Image.asset(
+                                          pic[index],
+                                          height: 90.h,
+                                        ),
+                                        SizedBox(
+                                          width: 10.w,
+                                        ),
+                                        Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          // crossAxisAlignment:
+                                          //     CrossAxisAlignment.center,
+                                          children: [
+                                            coustoText(text: music[index]),
+                                            SizedBox(
+                                              width: 10.w,
                                             ),
-                                          )
-                                        ]),
-                                  ))),
+                                            coustoText(text: singer[index]),
+                                            // const SizedBox(
+                                            //   width: 10,
+                                            // ),
+                                            // const SizedBox(
+                                            //   height: 22,
+                                            // ),
+                                          ],
+                                        ),
+                                      ]),
+                                  Icon(
+                                    Icons.clear,
+                                    color: const Color(0XffFFFFFF)
+                                        .withOpacity(0.4),
+                                  )
+                                ],
+                              )),
                         );
                       },
                     ),

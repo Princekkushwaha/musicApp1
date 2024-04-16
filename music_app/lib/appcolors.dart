@@ -11,5 +11,14 @@ extension AppColors on Color {
   static const Color beige2 = Color(0XffB5A19B);
   static const Color aquamarine = Color.fromARGB(255, 94, 174, 188);
   static const black1 = Color(0xff1D1D1D);
-  static const black2 =  Color(0xff1D1D1D);
+  static const black2 = Color(0xff1D1D1D);
+
+  // song color list
+
+  static const Color bgColor1 = Color(0xffFFFFFF);
+  static const Color bgColor2 = Color(0xffffffff);
+  static const Color bgColor3 = Color(0xffffffff);
+  static const Color bgColor4 = Color(0xffffffff);
+  static const Color bgColor5 = Color(0xffffffff);
+  static const Color bgColor6 = Color(0xffffffff);
 }
